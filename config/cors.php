@@ -6,7 +6,7 @@ return [
 
     'allowed_methods' => ['*'], // Allow all methods: GET, POST, PUT, DELETE, etc.
 
-    'allowed_origins' => ['*'], // Allow requests from any origin, you can specify domains as well
+    'allowed_origins' => ['https://dashgrosir.flutterflow.app', *], // Allow requests from any origin, you can specify domains as well
 
     'allowed_origins_patterns' => [], // Use patterns if needed
 
