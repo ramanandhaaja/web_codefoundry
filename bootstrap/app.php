@@ -11,8 +11,11 @@ return Application::configure(basePath: dirname(__DIR__))
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
     )
+
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->validateCsrfTokens(except: [
+            '/images','/images/*', '/api/*', 'api/*'
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
