@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 
 class ImageController extends Controller
 {
-
-
     function index(){
         /*
         $post = Blog::all();

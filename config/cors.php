@@ -2,7 +2,7 @@
 
 return [
 
-    'paths' => ['api/*', 'sanctum/csrf-cookie'],  // Specify the paths you want to allow CORS on
+    'paths' => ['*', 'sanctum/csrf-cookie'],  // Specify the paths you want to allow CORS on
 
     'allowed_methods' => ['*'], // Allow all methods: GET, POST, PUT, DELETE, etc.
 
