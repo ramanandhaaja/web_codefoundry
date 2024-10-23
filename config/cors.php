@@ -2,33 +2,19 @@
 
 return [
 
-    /*
-    |--------------------------------------------------------------------------
-    | Cross-Origin Resource Sharing (CORS) Configuration
-    |--------------------------------------------------------------------------
-    |
-    | Here you may configure your settings for cross-origin resource sharing
-    | or "CORS". This determines what cross-origin operations may execute
-    | in web browsers. You are free to adjust these settings as needed.
-    |
-    | To learn more: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
-    |
-    */
+    'paths' => ['api/*', 'sanctum/csrf-cookie'],  // Specify the paths you want to allow CORS on
 
-    'paths' => ['*'],
+    'allowed_methods' => ['*'], // Allow all methods: GET, POST, PUT, DELETE, etc.
 
-    'allowed_methods' => ['*'],
+    'allowed_origins' => ['*'], // Allow requests from any origin, you can specify domains as well
 
-    'allowed_origins' => ['http://157.230.253.149'],
+    'allowed_origins_patterns' => [], // Use patterns if needed
 
-    'allowed_origins_patterns' => ['*'],
+    'allowed_headers' => ['*'], // Allow all headers, specify custom headers if needed
 
-    'allowed_headers' => ['*'],
-
-    'exposed_headers' => ['*'],
+    'exposed_headers' => [],
 
     'max_age' => 0,
 
-    'supports_credentials' => true,
-
+    'supports_credentials' => false, // Set true if your application handles credentials (e.g., cookies)
 ];
