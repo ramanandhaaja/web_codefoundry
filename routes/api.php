@@ -16,4 +16,5 @@ Route::group(['prefix'=>'v1'], function(){
 
 Route::group(['prefix'=>'v2'], function(){
     Route::get('/images', [ImageController::class, 'index']);
+    Route::post('/images', [ImageController::class, 'store']);
 });
