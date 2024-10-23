@@ -11,10 +11,7 @@ class ImageController extends Controller
         /*
         $post = Blog::all();
         return response()->json($post);*/
-
         return '[{"imagePath":"something.jpg"}]';
-
-
     }
 
     function store(Request $request){
