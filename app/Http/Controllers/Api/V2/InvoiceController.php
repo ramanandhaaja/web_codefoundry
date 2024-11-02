@@ -12,14 +12,15 @@ class InvoiceController extends Controller
     //
     function index(){
 
-        /*Pdf::view('invoice')
+        Pdf::view('invoice')
             ->paperSize(57, 200, 'mm')
             ->save('./assets/uploads/certificates/user/invoice.pdf');
-*/
+
+        /*
         return pdf()
             ->view('invoice')
             ->paperSize(57, 200, 'mm')
             ->name('invoice-2023-04-10.pdf');
-
+        */
     }
 }
