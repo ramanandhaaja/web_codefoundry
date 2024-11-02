@@ -17,7 +17,6 @@ class InvoiceController extends Controller
             ->save('./assets/uploads/certificates/user/invoice.pdf');
 
         */
-
         $invoice = 'nandha';
         $payment = 'cash';
 
