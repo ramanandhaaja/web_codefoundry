@@ -18,6 +18,7 @@ class InvoiceController extends Controller
 
         */
 
+        /*
         $invoice = 'nandha';
         $payment = 'cash';
 
@@ -25,13 +26,15 @@ class InvoiceController extends Controller
             ->paperSize(57, 100, 'mm')
             ->save('./assets/uploads/certificates/user/invoice.pdf');
 
-        /* create directory */
         $directory = "./assets/uploads/certificates/user/";
         $directoryJson = asset('assets/uploads/certificates/user/');
 
         $imagePath = $directoryJson ."/". "invoice.pdf";
 
         return $imagePath;
+        */
+
+        return asset('assets/uploads/certificates/user/invoice.pdf');
 
         /*
         return pdf()
