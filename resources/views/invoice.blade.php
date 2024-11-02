@@ -68,7 +68,7 @@
 <body>
   <div class="receipt-container">
     <div class="receipt-header">
-      <h2>Store Name</h2>
+      <h2>Ayam Geprek Sesko</h2>
       <p>1234 Elm Street</p>
       <p>City, ST 56789</p>
       <p>Tel: (123) 456-7890</p>
