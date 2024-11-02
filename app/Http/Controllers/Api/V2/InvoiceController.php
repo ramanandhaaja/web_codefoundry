@@ -33,7 +33,9 @@ class InvoiceController extends Controller
 
         return $imagePath;
         */
-        return view('invoicetest');
+
+        $imagePath = asset('assets/uploads/certificates/user/invoice.pdf');
+        return view('invoicetest',compact('imagePath'));
         /*
         return pdf()
             ->view('invoice', compact('invoice', 'payment'))
