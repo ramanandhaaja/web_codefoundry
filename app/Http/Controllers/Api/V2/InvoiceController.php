@@ -34,7 +34,8 @@ class InvoiceController extends Controller
         return $imagePath;
         */
 
-        return asset('assets/uploads/certificates/user/invoice.pdf');
+        //return asset('assets/uploads/certificates/user/invoice.pdf');
+        return '[{"imagePath":"nandha.jpg"}]';
 
         /*
         return pdf()
