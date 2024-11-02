@@ -18,7 +18,7 @@ class InvoiceController extends Controller
 
         */
 
-        /*
+
         $invoice = 'nandha';
         $payment = 'cash';
 
@@ -31,11 +31,8 @@ class InvoiceController extends Controller
 
         $imagePath = $directoryJson ."/". "invoice.pdf";
 
-        return $imagePath;
-        */
-
-        $imagePath = asset('assets/uploads/certificates/user/invoice.pdf');
         return view('invoicetest',compact('imagePath'));
+
         /*
         return pdf()
             ->view('invoice', compact('invoice', 'payment'))
