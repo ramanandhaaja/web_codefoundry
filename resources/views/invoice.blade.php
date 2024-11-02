@@ -76,8 +76,8 @@
     </div>
 
     <div class="receipt-info">
-      <p><strong>Customer:</strong> John Doe</p>
-      <p><strong>Payment:</strong> Credit Card</p>
+      <p><strong>Customer:</strong> {{ $invoice }}</p>
+      <p><strong>Payment:</strong> {{ $payment }}</p>
     </div>
 
     <div class="items">

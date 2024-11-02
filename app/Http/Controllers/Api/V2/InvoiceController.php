@@ -16,11 +16,19 @@ class InvoiceController extends Controller
             ->paperSize(57, 200, 'mm')
             ->save('./assets/uploads/certificates/user/invoice.pdf');
 
-        */
-        return pdf()
-            ->view('invoice')
-            ->paperSize(57, 200, 'mm')
-            ->name('invoice-2023-04-10.pdf');
 
+        return pdf()
+            ->view('invoice', ['invoice' => 'nandha'])
+            ->paperSize(57, 100, 'mm')
+            ->name('invoice-2023-04-10.pdf');
+        */
+
+        $invoice = 'nandha';
+        $payment = 'cash';
+
+        return pdf()
+            ->view('invoice', compact('invoice', 'payment'))
+            ->paperSize(57, 100, 'mm')
+            ->name('invoice-2023-04-10.pdf');
     }
 }
