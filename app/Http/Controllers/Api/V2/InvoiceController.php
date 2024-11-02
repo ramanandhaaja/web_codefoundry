@@ -18,7 +18,6 @@ class InvoiceController extends Controller
 
         */
 
-
         $invoice = 'nandha';
         $payment = 'cash';
 
