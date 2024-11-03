@@ -44,8 +44,8 @@ class InvoiceController extends Controller
         $invoice = [
            "store_name"=> $request->store_name,
            "address" => $request->address,
-           "Items" => [],
-           "Total Price" => 0,
+           "items" => [],
+           "total_price" => 0,
         ];
 
         foreach($request->items as $item) {
@@ -55,8 +55,8 @@ class InvoiceController extends Controller
                 'quantity'=> 'required|integer',
             ]);
 
-           $invoice["Items"][] = $item;   //Add item to invoice items.
-           $invoice["Total Price"]+= ($item['price'] * $item['quantity']); //Calculate total price.
+           $invoice["items"][] = $item;   //Add item to invoice items.
+           $invoice["total_price"]+= ($item['price'] * $item['quantity']); //Calculate total price.
         }
 
        //Do whatever you want with the data here (e.g save in database or send mail).
