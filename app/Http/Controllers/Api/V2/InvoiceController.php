@@ -42,8 +42,8 @@ class InvoiceController extends Controller
         ]);
 
         $invoice = [
-           "Store Name"=> $request->store_name,
-           "Address" => $request->address,
+           "store_name"=> $request->store_name,
+           "address" => $request->address,
            "Items" => [],
            "Total Price" => 0,
         ];
