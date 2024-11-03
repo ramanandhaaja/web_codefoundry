@@ -45,8 +45,9 @@ class InvoiceController extends Controller
            "address" => $request->address,
         ];
 
-       //Do whatever you want with the data here (e.g save in database or send mail).
+        $jsonInvoice = json_encode($invoice);
 
-       return view('invoice.invoicepost', compact('invoice'));    //Display invoice detail
+       //Do whatever you want with the data here (e.g save in database or send mail).
+       return view('invoice.invoicepost', compact('jsonInvoice'));    //Display invoice detail
     }
 }
