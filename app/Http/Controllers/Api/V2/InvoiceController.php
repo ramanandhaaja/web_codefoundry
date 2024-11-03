@@ -34,12 +34,12 @@ class InvoiceController extends Controller
 
         Pdf::view('invoice.invoice', compact('invoice'))
             ->paperSize(57, 100, 'mm')
-            ->save('./assets/uploads/certificates/user/'.$orderId.'invoice.pdf');
+            ->save('./assets/uploads/certificates/user/invoice.pdf');
 
         $directory = "./assets/uploads/certificates/user/";
         $directoryJson = asset('assets/uploads/certificates/user/');
 
-        $imagePath = $directoryJson ."/". $orderId . "invoice.pdf";
+        $imagePath = $directoryJson ."/invoice.pdf";
 
         return view('invoice.invoiceview',compact('imagePath'));
 
