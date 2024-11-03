@@ -86,7 +86,7 @@
             <p>{{ $item['name'] }}</p>
         </div>
         <div class="item">
-            <p>Rp {{ number_format($item['price'], 0, ',', '.') }} x {{ $item['quantity'] }}</p>
+            <p>{{ $item['quantity'] }} x Rp {{ number_format($item['price'], 0, ',', '.') }}</p>
             <p>Rp {{ number_format($item['price'] * $item['quantity'], 0, ',', '.') }}</p>
         </div>
         @endforeach
