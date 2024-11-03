@@ -60,6 +60,7 @@ class InvoiceController extends Controller
         }
 
        //Do whatever you want with the data here (e.g save in database or send mail).
-     return view('invoice', compact('invoice'));    //Display invoice detail
+
+       return view('invoice', compact('invoice'));    //Display invoice detail
     }
 }
