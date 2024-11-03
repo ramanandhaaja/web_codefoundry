@@ -5,5 +5,4 @@ header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Conte
 header("Access-Control-Allow-Methods: GET, POST");
 header("Allow: GET, POST");
 ?>
-
 [{"storeName":"{{ $invoice["store_name"] }}"}]
