@@ -11,20 +11,35 @@ use function Spatie\LaravelPdf\Support\pdf;
 class InvoiceController extends Controller
 {
     //
-    function index(){
+    function index(Request $request){
 
+        $orderId = $request->query('order_id');
 
-        $invoice = 'nandha';
-        $payment = 'cash';
+        $orderItems = OrderItems::where('order_id', $request->order_id)->get();
+        $arrOrderItems = $orderItems->toArray();
 
-        Pdf::view('invoice.invoice', compact('invoice', 'payment'))
+        $totalPrice = 0;
+        foreach ($arrOrderItems as $item) {
+            $totalPrice += $item['price'] * $item['quantity'];
+        }
+
+        $invoice = [
+            "store_name"=> "Ayam Geprek Sesko",
+            "address" => "Jalan kemang timur raya no 62",
+            "payment" => "cash",
+            "order_id" => $orderId,
+            "items" => $arrOrderItems,
+            "total_price" => $totalPrice,
+         ];
+
+        Pdf::view('invoice.invoice', compact('invoice'))
             ->paperSize(57, 100, 'mm')
-            ->save('./assets/uploads/certificates/user/invoice.pdf');
+            ->save('./assets/uploads/certificates/user/'.$orderId.'invoice.pdf');
 
         $directory = "./assets/uploads/certificates/user/";
         $directoryJson = asset('assets/uploads/certificates/user/');
 
-        $imagePath = $directoryJson ."/". "invoice.pdf";
+        $imagePath = $directoryJson ."/". $orderId . "invoice.pdf";
 
         return view('invoice.invoiceview',compact('imagePath'));
 
@@ -36,8 +51,6 @@ class InvoiceController extends Controller
     }
 
     function store(Request $request){
-
-
 
         $validated = $request->validate([
             'store_name' => 'required|string',
@@ -71,7 +84,6 @@ class InvoiceController extends Controller
         }
         */
 
-       //Do whatever you want with the data here (e.g save in database or send mail).
        return view('invoice.invoicepost', compact('invoice'));    //Display invoice detail
     }
 }

@@ -68,35 +68,30 @@
 <body>
   <div class="receipt-container">
     <div class="receipt-header">
-      <h2>Ayam Geprek Sesko</h2>
-      <p>1234 Elm Street</p>
-      <p>City, ST 56789</p>
-      <p>Tel: (123) 456-7890</p>
+      <h2>{{ $invoice["store_name"] }}</h2>
+      <p>{{ $invoice["address"] }}</p>
+      <p>Jakarta Selatan</p>
       <p>Date: <span id="date"></span></p>
     </div>
+    <br/>
 
     <div class="receipt-info">
-      <p><strong>Customer:</strong> {{ $invoice }}</p>
-      <p><strong>Payment:</strong> {{ $payment }}</p>
+      <p><strong>Customer:</strong> Dine-in</p>
+      <p><strong>Payment:</strong> {{ $invoice["payment"] }}</p>
     </div>
 
     <div class="items">
-      <div class="item">
-        <p>Item 1</p>
-        <p>$10.00</p>
-      </div>
-      <div class="item">
-        <p>Item 2</p>
-        <p>$15.00</p>
-      </div>
-      <div class="item">
-        <p>Item 3</p>
-        <p>$8.00</p>
-      </div>
+        @foreach ($invoice['items'] as $item)
+        <div class="item">
+            <p>{{ $item['name'] }}</p>
+            <p>{{ $item['price'] }} x {{ $item['quantity'] }}</p>
+            <p>{{ $item['price'] * $item['quantity'] }}</p>
+        </div>
+        @endforeach
     </div>
 
     <div class="total">
-      <p>Total: $33.00</p>
+      <p>Rp. {{ $invoice["total_price"] }}</p>
     </div>
 
     <div class="footer">
