@@ -48,6 +48,7 @@ class InvoiceController extends Controller
             ->view('invoice', compact('invoice', 'payment'))
             ->paperSize(57, 100, 'mm')
             ->name('invoice-2023-04-10.pdf');*/
+
     }
 
     function store(Request $request){
