@@ -22,4 +22,5 @@ Route::group(['prefix'=>'v2'], function(){
 
 Route::group(['prefix'=>'v2'], function(){
     Route::get('/invoice', [InvoiceController::class, 'index']);
+    Route::post('/invoice', [InvoiceController::class, 'store']);
 });
