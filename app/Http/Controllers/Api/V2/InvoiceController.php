@@ -46,6 +46,7 @@ class InvoiceController extends Controller
         ];
 
         $jsonInvoice = json_encode($invoice);
+        //json(['invoice' => $jsonInvoice])
 
        //Do whatever you want with the data here (e.g save in database or send mail).
        return view('invoice.invoicepost', compact('jsonInvoice'));    //Display invoice detail
