@@ -84,14 +84,17 @@
         @foreach ($invoice['items'] as $item)
         <div class="item">
             <p>{{ $item['name'] }}</p>
-            <p>{{ $item['price'] }} x {{ $item['quantity'] }}</p>
-            <p>{{ $item['price'] * $item['quantity'] }}</p>
+        </div>
+        <div class="item">
+
+            <p>Rp {{ number_format($item['price'], 0, ',', '.') }} x {{ $item['quantity'] }}</p>
+            <p>Rp {{ number_format($item['price'] * $item['quantity'], 0, ',', '.') }}</p>
         </div>
         @endforeach
     </div>
 
     <div class="total">
-      <p>Rp. {{ $invoice["total_price"] }}</p>
+      <p>Rp {{ number_format($invoice["total_price"], 0, ',', '.') }}</p>
     </div>
 
     <div class="footer">
