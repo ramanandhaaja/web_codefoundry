@@ -38,26 +38,12 @@ class InvoiceController extends Controller
         $validated = $request->validate([
             'store_name' => 'required|string',
             'address' => 'required|string',
-            'items' => 'array',  //Each item should contain name and price.
         ]);
 
         $invoice = [
            "store_name"=> $request->store_name,
            "address" => $request->address,
-           "items" => [],
-           "total_price" => 0,
         ];
-
-        foreach($request->items as $item) {
-            $validated = $request->validate([   //Validate each item.
-                'name' => 'required|string',
-                'price' => 'required|numeric',
-                'quantity'=> 'required|integer',
-            ]);
-
-           $invoice["items"][] = $item;   //Add item to invoice items.
-           $invoice["total_price"]+= ($item['price'] * $item['quantity']); //Calculate total price.
-        }
 
        //Do whatever you want with the data here (e.g save in database or send mail).
 
