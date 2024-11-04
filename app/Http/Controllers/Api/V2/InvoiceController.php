@@ -33,7 +33,7 @@ class InvoiceController extends Controller
          ];
 
         Pdf::view('invoice.invoice', compact('invoice'))
-            ->paperSize(57, 100, 'mm')
+            ->paperSize(58, 100, 'mm')
             ->save('./assets/uploads/certificates/user/'.$orderId.'invoice.pdf');
 
         $directory = "./assets/uploads/certificates/user/";
