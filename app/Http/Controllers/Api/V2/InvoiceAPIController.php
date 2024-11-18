@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Spatie\LaravelPdf\Facades\Pdf;
 use function Spatie\LaravelPdf\Support\pdf;
 
-class InvoiceController extends Controller
+class InvoiceAPIController extends Controller
 {
     //
     function index(Request $request){
@@ -41,7 +41,7 @@ class InvoiceController extends Controller
 
         $imagePath = $directoryJson ."/". $orderId . "invoice.pdf";
 
-        return view('invoice.invoiceview',compact('imagePath'));
+        return view('invoice.invoiceview',compact('imagePath', ));
 
         /*
         return pdf()
@@ -49,6 +49,10 @@ class InvoiceController extends Controller
             ->paperSize(57, 100, 'mm')
             ->name('invoice-2023-04-10.pdf');*/
 
+    }
+
+    function create(){
+        return view('cms.layout');
     }
 
     function store(Request $request){

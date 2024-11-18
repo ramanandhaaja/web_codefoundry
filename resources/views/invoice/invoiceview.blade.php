@@ -7,3 +7,4 @@ header("Allow: GET, POST");
 ?>
 
 [{"imagePath":"{{ asset($imagePath) }}"}]
+
