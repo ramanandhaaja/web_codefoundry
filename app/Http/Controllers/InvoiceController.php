@@ -21,7 +21,7 @@ class InvoiceController extends Controller
     }
 
     function create(){
-        return view('cms.layout');
+        return view('cms.invoice.create');
     }
 
     function store(Request $request){

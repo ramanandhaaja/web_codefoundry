@@ -10,11 +10,8 @@ use function Spatie\LaravelPdf\Support\pdf;
 
 class PageController extends Controller
 {
-
-
     function index(Request $request){
 
         return view('cms.dashboard');
     }
-
 }
